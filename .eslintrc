@@ -1,0 +1,15 @@
+{ 
+  "extends": "airbnb/base",
+  "rules": {
+    "no-underscore-dangle" : "off",
+	"no-plusplus": "off"
+  },
+  "globals": {
+    "Victor": true,
+    "Game": true,
+    "Player": true,
+    "Crumb": true,
+    "Mouse": true,
+    "io": true
+  }
+}

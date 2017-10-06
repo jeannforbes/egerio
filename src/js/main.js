@@ -1,6 +1,8 @@
-window.onload = function(){
-	var socket;
-	
-	game = new Game(socket, document.querySelector('canvas'), new Mouse());
-	game.init();
-}
+/* eslint-env browser */
+
+window.onload = function () {
+  let socket;
+
+  const game = new Game(socket, document.querySelector('#game'), new Mouse());
+  game.init();
+};

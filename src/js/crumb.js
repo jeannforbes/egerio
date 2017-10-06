@@ -1,37 +1,39 @@
-Crumb = function(id,loc,mass){
-    this.palette = ['#ffeead', '#ff6f69', '#ffcc5c', '#88d8b0'];
+/* eslint-env browser */
 
-    this.id = id,
-    this.loc = new Victor(loc.x,loc.y);
-    this.color = this.palette[parseInt(Math.random()*this.palette.length)];
-    this.mass = mass;
+const Crumb = function (id, loc, mass) {
+  this.palette = ['#ffeead', '#ff6f69', '#ffcc5c', '#88d8b0'];
+
+  this.id = id;
+  this.loc = new Victor(loc.x, loc.y);
+  this.color = this.palette[parseInt(Math.random() * this.palette.length, 10)];
+  this.mass = mass;
 };
 
-Crumb.prototype.draw = function(ctx){
-    ctx.save();
+Crumb.prototype.draw = function (ctx) {
+  ctx.save();
 
-    // style
-    ctx.fillStyle = this.color || '#ffeead';
-    
-    // drawing
-    ctx.beginPath();
-    ctx.arc(this.loc.x, this.loc.y, this.mass, 0, 2*Math.PI);
-    ctx.fill();
+  // style
+  ctx.fillStyle = this.color || '#ffeead';
 
-    // style
-    ctx.globalAlpha = 0.5;
+  // drawing
+  ctx.beginPath();
+  ctx.arc(this.loc.x, this.loc.y, this.mass, 0, 2 * Math.PI);
+  ctx.fill();
 
-    // drawing
-    ctx.beginPath();
-    ctx.arc(this.loc.x, this.loc.y, this.mass*3, 0, 2*Math.PI);
-    ctx.fill();
+  // style
+  ctx.globalAlpha = 0.5;
 
-    // transforms
-    ctx.translate(this.loc.x-20, this.loc.y+10);
+  // drawing
+  ctx.beginPath();
+  ctx.arc(this.loc.x, this.loc.y, this.mass * 3, 0, 2 * Math.PI);
+  ctx.fill();
 
-    ctx.restore();
-}
+  // transforms
+  ctx.translate(this.loc.x - 20, this.loc.y + 10);
 
-Crumb.prototype.destroy = function(){
-    delete this;
-}
+  ctx.restore();
+};
+
+Crumb.prototype.destroy = function () {
+  delete this;
+};

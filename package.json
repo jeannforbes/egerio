@@ -1,11 +1,12 @@
 {
-  "name": "ebbio",
+  "name": "syncing-data-ii",
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./src/app.js"
+    "start": "node ./src/app.js",
+    "pretest": "eslint ./src --fix",
+    "test": "echo \"Tests complete\""
   },
   "author": "Jeannette Forbes",
   "license": "ISC",
@@ -16,6 +17,9 @@
     "victor": "^1.1.0"
   },
   "devDependencies": {
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0",
     "nodemon": "^1.11.0"
   }
 }
